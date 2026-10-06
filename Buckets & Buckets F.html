@@ -127,6 +127,41 @@ html{color-scheme:light only}
 .rl{position:relative;flex:0 0 min(240px,68vw);aspect-ratio:9/16;scroll-snap-align:start;border-radius:18px;overflow:hidden;background:#000;border:3px solid var(--ink);box-shadow:0 8px 20px #0004}
 .rl video{width:100%;height:100%;object-fit:cover;display:block;border:0;border-radius:0;box-shadow:none;flex:none}
 .pl{position:absolute;inset:0;margin:auto;width:66px;height:66px;border-radius:50%;background:#b0352add;color:#fff;border:3px solid #fff;font-size:1.7rem;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0 0 0 4px}
+/* kraft paper background */
+:root{--paper:#e9cba3}
+body{background-color:#e9cba3;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .27 0 0 0 0 .12 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),radial-gradient(ellipse at 20% 0%,#f3dcba 0,transparent 55%),radial-gradient(ellipse at 90% 100%,#d9b284 0,transparent 55%);background-attachment:scroll}
+.hero{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .27 0 0 0 0 .12 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),radial-gradient(circle at 50% 0,#efcfa6,#dcae82 65%)!important}
+#more{background-color:#d9ac7e!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .27 0 0 0 0 .12 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")!important}
+#sauces{background-color:#2b2927!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .27 0 0 0 0 .12 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),linear-gradient(180deg,#34302d,#2b2927)!important}
+.about{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .27 0 0 0 0 .12 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),linear-gradient(180deg,#b0352a,#9a2c22)!important}
+.card{background:#fff8ec;border-color:#d9b98c}
+.strip div{box-shadow:0 6px 0 var(--red),0 10px 18px #00000022}
+footer{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .27 0 0 0 0 .12 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-color:#2b2927}
+/* dark charcoal theme */
+:root{--paper:#1f1d1b;--fg:#fff3dc;--muted:#cdbca6}
+body{background-color:#1f1d1b;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 .9 0 0 0 0 .8 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),radial-gradient(ellipse at 15% 0,#3a2a22 0,transparent 55%),radial-gradient(ellipse at 90% 100%,#2c1b19 0,transparent 55%);color:#fff3dc}
+.top{background:#141312ee}
+.hero{background-color:#1f1d1b!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 .9 0 0 0 0 .8 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),radial-gradient(circle at 50% 0,#5a2a22,#1f1d1b 72%)!important;color:#fff3dc}
+.hero .badge{background:var(--red);color:#fff}
+.hero p:before{color:#f0b38e}
+.strip div{background:#33302d;box-shadow:0 6px 0 var(--red)}
+#story .lead{color:#fff3dc}
+#sauces{background-color:#2a2624!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 .9 0 0 0 0 .8 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")!important}
+#sides{background:#262321}
+#more{background-color:#2a2624!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 .9 0 0 0 0 .8 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")!important;color:#fff3dc!important}
+#more .vat{color:#cdbca6!important}
+#uph{color:#f0b38e!important}
+.box{background:#2f2b28;border:1px solid #4a423c}
+#gallery img{border-color:#f0b38e!important}
+.rl{border-color:#4a423c}
+footer{background-color:#141312}
+.card{--fg:#2b2927;color:#2b2927}
+.box{color:#fff3dc}
+.card .row small,.card .note{color:#6b5a48}
+#sauces .card .note,#sauces .card small{color:#cdbca6}
+.b2{background:#3d3835;color:#fff3dc;border:2px solid #7a6a5c}
+.card .b2{background:#2b2927;border-color:#2b2927}
+.vat,#brn{color:#cdbca6}
 </style>
 </head>
 <body>
