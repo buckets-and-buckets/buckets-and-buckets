@@ -1149,6 +1149,103 @@ footer .brand { font-size: 1.6rem; }
 .fr i span { font-weight: 700; }
 .fr i { font-style: normal; font-weight: 700; background: #ffe45c; border-radius: 999px; padding: 3px 10px; border: 1.5px solid #111; font-size: .92rem; }
 .foot-note { color: #f1e6d0 !important; font-weight: 600; }
+
+
+/* ===== v37: no duplicate contact on home ===== */
+.foot-ig { display: none; width: 100%; order: 3; gap: 12px; grid-template-columns: 1fr 1fr; }
+.foot-ig a.fb { display: flex; align-items: center; justify-content: center; min-height: 52px; padding: 10px 14px; background: #d9c7ff; color: #111; border: 2px solid #111; border-radius: 16px; font-weight: 800; text-decoration: none; box-shadow: 3px 3px 0 #ffe45c; text-align: center; }
+body:has(#v-home:not([hidden])) .foot-cols { display: none; }
+body:has(#v-home:not([hidden])) .foot-ig { display: grid; }
+@media (max-width: 480px) { .foot-ig { grid-template-columns: 1fr; } }
+body:has(#v-home:not([hidden])) footer { padding-block: 28px 20px; }
+.branches { margin-bottom: 8px !important; }
+.steps { margin: 20px auto 0 !important; }
+.view#v-home > .wrap:last-of-type, #v-home .ppanel.on { padding-bottom: 0; }
+body:has(#v-home:not([hidden])) main, body:has(#v-home:not([hidden])) .ppanel { margin-bottom: 0; }
+.bcard .bbody { display: flex; flex-direction: column; }
+.bcard .hrs { flex: 1; display: grid; align-content: center; gap: 8px; }
+
+
+/* ===== v38: branch-specific footer ===== */
+body:has(#v-qurum:not([hidden])) .fcol.fb2, body:has(#v-boulevard:not([hidden])) .fcol.fq { display: none; }
+body:has(#v-qurum:not([hidden])) .foot-cols, body:has(#v-boulevard:not([hidden])) .foot-cols { grid-template-columns: 1fr !important; }
+.fcol { grid-template-columns: 1fr; gap: 20px; padding: 26px 24px; }
+.fcol .fmain, .fcol .fside { display: grid; gap: 14px; align-content: start; }
+.faddr { margin: 0; font-weight: 600; line-height: 1.5; color: #3a2d22; }
+.fphoto { border: 3px solid #111; border-radius: 20px; overflow: hidden; aspect-ratio: 16 / 9; box-shadow: 4px 4px 0 #111; }
+.fphoto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.fcol a.fb-menu { background: #111; color: #ffe45c; }
+.fother { color: #111 !important; font-weight: 800; text-decoration: underline !important; text-decoration-color: #d92b1c !important; text-underline-offset: 4px; display: inline-flex; align-items: center; min-height: 44px; }
+.fbtns { grid-template-columns: 1fr 1fr; }
+.fcol a.fb-wa, .fcol a.fb-menu { grid-column: 1 / -1; }
+@media (min-width: 880px) {
+  body:has(#v-qurum:not([hidden])) .fmain, body:has(#v-boulevard:not([hidden])) .fmain { align-content: start; gap: 18px; }
+  body:has(#v-qurum:not([hidden])) .fcol a.fb, body:has(#v-boulevard:not([hidden])) .fcol a.fb { min-height: 68px; font-size: 1.05rem; }
+  body:has(#v-qurum:not([hidden])) .fcol, body:has(#v-boulevard:not([hidden])) .fcol { grid-template-columns: 1.1fr 1fr; gap: 28px; padding: 32px; }
+  body:has(#v-qurum:not([hidden])) .fcol a.fb-wa, body:has(#v-boulevard:not([hidden])) .fcol a.fb-wa { grid-column: auto; }
+  body:has(#v-qurum:not([hidden])) .fcol a.fb-menu, body:has(#v-boulevard:not([hidden])) .fcol a.fb-menu { grid-column: auto; }
+}
+body:has(#v-qurum:not([hidden])) .foot-ig, body:has(#v-boulevard:not([hidden])) .foot-ig { display: none; }
+@media (max-width: 480px) { .fbtns { grid-template-columns: 1fr; } }
+
+
+/* ===== v39: final polish ===== */
+.fcol, .fcol > *, .fmain, .fside, .fbtns, .fbtns > * { min-width: 0; }
+.fcol a.fb span { overflow-wrap: anywhere; text-align: center; }
+@media (max-width: 400px) { .fcol a.fb { font-size: .92rem; padding-inline: 10px; } .fcol { padding: 20px 16px; } }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+:focus-visible { outline: 3px solid #d92b1c; outline-offset: 3px; }
+img { max-width: 100%; }
+body { overflow-x: clip; }
+@media print { header, .cartbar, .fab, .orderbar, .totop, .add, .minus { display: none !important; } }
+
+
+/* ===== v40: explore & collapse ===== */
+.mexplore { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 14px 0 6px; }
+@media (min-width: 760px) { .mexplore { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+@media (min-width: 1100px) { .mexplore { grid-template-columns: repeat(4, 1fr); } }
+.tabbed.picked .mexplore, .tabbed.searching .mexplore { display: none; }
+.mexp-h { grid-column: 1 / -1; margin: 0; font-weight: 800; font-size: 1.05rem; color: #3a2d22; }
+.mx { position: relative; aspect-ratio: 4 / 3; border: 3px solid #111; border-radius: 22px; overflow: hidden; padding: 0; cursor: pointer; background: #ffe45c; box-shadow: 5px 5px 0 #111; font: inherit; transition: transform .12s, box-shadow .12s; }
+.mx:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 #111; }
+.mx img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.mx .mxe { position: absolute; inset: 0; display: grid; place-items: center; font-size: 2.4rem; }
+.mx .mxe img { position: static; width: 56px; height: 56px; border-radius: 12px; }
+.mx::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 38%, rgba(0,0,0,.78)); }
+.mx .mxl { position: absolute; z-index: 2; left: 12px; right: 12px; bottom: 10px; color: #fff; font-weight: 800; font-size: 1.05rem; line-height: 1.2; text-align: start; text-shadow: 0 1px 6px rgba(0,0,0,.6); }
+.mx:hover { transform: translateY(-2px); }
+.mall { position: sticky; inset-inline-start: 0; z-index: 3; flex: 0 0 auto; display: none; align-items: center; min-height: 52px; padding: 8px 18px; border: 2px solid #111; border-radius: 999px; background: #111; color: #ffe45c; font: inherit; font-weight: 800; cursor: pointer; box-shadow: 3px 3px 0 #d92b1c; white-space: nowrap; }
+.mtabs .mall { display: none; }
+.tabbed.picked .mtabs .mall { display: inline-flex; }
+.mback { display: none !important; margin: 12px 14px 0; font: inherit; font-weight: 800; cursor: pointer; border: 2px solid #111; background: #fff; color: #111; border-radius: 999px; padding: 6px 16px; min-height: 44px; box-shadow: 3px 3px 0 #111; }
+.tabbed.picked .mpanel.act .mback { display: inline-flex; align-items: center; }
+.tabbed.searching .mback { display: none !important; }
+details.hrs-d, details.frows { border: 2px solid #111; border-radius: 16px; background: #fff; padding: 0; overflow: hidden; }
+details.hrs-d > summary, details.frows > summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 10px; min-height: 48px; padding: 10px 16px; font-weight: 800; color: #111; background: #ffe45c; text-transform: none; letter-spacing: 0; font-size: 1rem; }
+details.hrs-d > summary::-webkit-details-marker, details.frows > summary::-webkit-details-marker { display: none; }
+details.hrs-d > summary::after, details.frows > summary::after { content: "+"; width: 28px; height: 28px; border-radius: 50%; background: #111; color: #ffe45c; display: grid; place-items: center; font-size: 1.3rem; line-height: 1; transition: transform .2s; }
+details[open].hrs-d > summary::after, details[open].frows > summary::after { content: "−"; }
+details.hrs-d .hrs { padding: 12px 14px 14px; display: grid; gap: 8px; }
+details.frows { gap: 0; }
+details.frows > .fr { margin: 10px 14px 0; }
+details.frows > .fr:last-child { margin-bottom: 14px; }
+details.frows > summary.fh-t { color: #111; font-size: 1rem; }
+.bcard .hrs { flex: initial; }
+.mtabs-wrap { margin-top: 0 !important; }
+body.menu-mode .msearch { margin-bottom: 0 !important; }
+.tabbed .nores { margin-top: 12px; }
+.bcard .hrs-d { margin: 4px 0 6px; }
+
+
+/* ===== v41: category arrows ===== */
+.mtabs-wrap { position: sticky; }
+@media (max-width: 760px) { .mtabs-wrap { position: relative; } }
+.marr { position: absolute; top: 50%; transform: translateY(-50%); z-index: 50; width: 44px; height: 44px; border-radius: 50%; border: 2px solid #111; background: #ffe45c; color: #111; font: inherit; font-size: 1.7rem; font-weight: 900; line-height: 1; padding: 0 0 4px; cursor: pointer; box-shadow: 3px 3px 0 #111; display: grid; place-items: center; }
+.marr[hidden] { display: none; }
+.marr-l { left: 4px; } .marr-r { right: 4px; }
+.marr:active { transform: translateY(-50%) translate(2px, 2px); box-shadow: 1px 1px 0 #111; }
+.mtabs { scroll-behavior: smooth; }
 </style>
 </head>
 <body>
@@ -1213,8 +1310,8 @@ footer .brand { font-size: 1.6rem; }
     <section class="wrap branches" id="branches">
       <div class="sec-h"><p class="eyebrow"><span class="en">Two branches, one family</span><span class="ar">فرعان، عائلة واحدة</span></p><h2><span class="en">Choose your branch</span><span class="ar">اختر فرعك</span></h2></div>
       <div class="pick">
-        <article class="card bcard"><div class="bimg"><img data-img="claw" alt="Lobster and shrimp bucket at Buckets and Buckets Qurum" loading="lazy" decoding="async"></div><div class="bbody"><span class="tag"><span class="en">QURUM</span><span class="ar">القرم</span></span><h2><span class="en">Qurum branch</span><span class="ar">فرع القرم</span></h2><div class="hrs"><span class="hr"><b><span class="en">Sun – Sat</span><span class="ar">الأحد – السبت</span></b><i><span class="en">11:00 AM – 11:30 PM</span><span class="ar">11:00 ص – 11:30 م</span></i></span></div><div class="actions"><a class="btn btn-wa" href="https://api.whatsapp.com/send?phone=96871557044&text=Hello%20Buckets%20%26%20Buckets%2C%20I%20would%20like%20to%20order" target="_blank" rel="noopener noreferrer"><svg class="wai" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a><a class="btn" href="https://maps.app.goo.gl/XwJsp2YpgRn4Bw6o9?g_st=ic" target="_blank" rel="noopener noreferrer"><span class="en">Directions</span><span class="ar">الاتجاهات</span></a><a class="btn btn-dark" data-gomenu href="#qurum"><span class="en">Menu</span><span class="ar">القائمة</span></a></div></div></article>
-        <article class="card bcard"><div class="bimg"><img data-img="fry" alt="Shrimp tossed in sauce in a steel bowl at Buckets and Buckets Boulevard" loading="lazy" decoding="async"></div><div class="bbody"><span class="tag"><span class="en">AL KHOUD</span><span class="ar">الخوض</span></span><h2><span class="en">Boulevard branch</span><span class="ar">فرع البوليفارد</span></h2><div class="hrs"><span class="hr"><b><span class="en">Sat – Wed</span><span class="ar">السبت – الأربعاء</span></b><i><span class="en">11:00 AM – 11:00 PM</span><span class="ar">11:00 ص – 11:00 م</span></i></span><span class="hr"><b><span class="en">Thu – Fri</span><span class="ar">الخميس – الجمعة</span></b><i><span class="en">11:00 AM – 12:00 AM</span><span class="ar">11:00 ص – 12:00 ص</span></i></span></div><div class="actions"><a class="btn btn-wa" href="https://api.whatsapp.com/send?phone=96899742274&text=Hello%20Buckets%20%26%20Buckets%2C%20I%20would%20like%20to%20order" target="_blank" rel="noopener noreferrer"><svg class="wai" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Buckets%20%26%20Buckets%20Al%20Araimi%20Boulevard%20Mall%20Al%20Khoud%20Muscat" target="_blank" rel="noopener noreferrer"><span class="en">Directions</span><span class="ar">الاتجاهات</span></a><a class="btn btn-dark" data-gomenu href="#boulevard"><span class="en">Menu</span><span class="ar">القائمة</span></a></div></div></article>
+        <article class="card bcard"><div class="bimg"><img data-img="claw" alt="Lobster and shrimp bucket at Buckets and Buckets Qurum" loading="lazy" decoding="async"></div><div class="bbody"><span class="tag"><span class="en">QURUM</span><span class="ar">القرم</span></span><h2><span class="en">Qurum branch</span><span class="ar">فرع القرم</span></h2><details class="hrs-d"><summary><span class="en">Opening hours</span><span class="ar">أوقات العمل</span></summary><div class="hrs"><span class="hr"><b><span class="en">Sun – Sat</span><span class="ar">الأحد – السبت</span></b><i><span class="en">11:00 AM – 11:30 PM</span><span class="ar">11:00 ص – 11:30 م</span></i></span></div></details><div class="actions"><a class="btn btn-wa" href="https://api.whatsapp.com/send?phone=96871557044&text=Hello%20Buckets%20%26%20Buckets%2C%20I%20would%20like%20to%20order" target="_blank" rel="noopener noreferrer"><svg class="wai" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a><a class="btn" href="https://maps.app.goo.gl/XwJsp2YpgRn4Bw6o9?g_st=ic" target="_blank" rel="noopener noreferrer"><span class="en">Directions</span><span class="ar">الاتجاهات</span></a><a class="btn btn-dark" data-gomenu href="#qurum"><span class="en">Menu</span><span class="ar">القائمة</span></a></div></div></article>
+        <article class="card bcard"><div class="bimg"><img data-img="fry" alt="Shrimp tossed in sauce in a steel bowl at Buckets and Buckets Boulevard" loading="lazy" decoding="async"></div><div class="bbody"><span class="tag"><span class="en">AL KHOUD</span><span class="ar">الخوض</span></span><h2><span class="en">Boulevard branch</span><span class="ar">فرع البوليفارد</span></h2><details class="hrs-d"><summary><span class="en">Opening hours</span><span class="ar">أوقات العمل</span></summary><div class="hrs"><span class="hr"><b><span class="en">Sat – Wed</span><span class="ar">السبت – الأربعاء</span></b><i><span class="en">11:00 AM – 11:00 PM</span><span class="ar">11:00 ص – 11:00 م</span></i></span><span class="hr"><b><span class="en">Thu – Fri</span><span class="ar">الخميس – الجمعة</span></b><i><span class="en">11:00 AM – 12:00 AM</span><span class="ar">11:00 ص – 12:00 ص</span></i></span></div></details><div class="actions"><a class="btn btn-wa" href="https://api.whatsapp.com/send?phone=96899742274&text=Hello%20Buckets%20%26%20Buckets%2C%20I%20would%20like%20to%20order" target="_blank" rel="noopener noreferrer"><svg class="wai" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Buckets%20%26%20Buckets%20Al%20Araimi%20Boulevard%20Mall%20Al%20Khoud%20Muscat" target="_blank" rel="noopener noreferrer"><span class="en">Directions</span><span class="ar">الاتجاهات</span></a><a class="btn btn-dark" data-gomenu href="#boulevard"><span class="en">Menu</span><span class="ar">القائمة</span></a></div></div></article>
       </div>
       <div class="steps"><div class="step"><b class="n">1</b><h3><span class="en">Pick your branch</span><span class="ar">اختر فرعك</span></h3><p><span class="en">Qurum or Al Khoud, each with its own menu.</span><span class="ar">القرم أو الخوض، ولكل فرع قائمته.</span></p></div><div class="step"><b class="n">2</b><h3><span class="en">Choose bucket + sauce</span><span class="ar">اختر الدلو والصلصة</span></h3><p><span class="en">Shrimp, lobster or crab, with seven signature sauces.</span><span class="ar">روبيان أو لوبستر أو سلطعون مع سبع صلصات مميزة.</span></p></div><div class="step"><b class="n">3</b><h3><span class="en">Order on WhatsApp</span><span class="ar">اطلب عبر واتساب</span></h3><p><span class="en">One tap opens a chat with the branch.</span><span class="ar">نقرة واحدة تفتح محادثة مع الفرع.</span></p></div></div>
     </section>
@@ -1376,7 +1473,7 @@ footer .brand { font-size: 1.6rem; }
 <footer>
   <div class="wrap foot">
     <a class="brand" href="#home" style="display:flex;align-items:center;gap:10px"><span class="en">Buckets <span>&amp;</span> Buckets</span><span class="ar">باكتس آند باكتس</span></a>
-    <div class="foot-cols"><div class="fcol fq"><span class="ftag"><span class="en">Muscat</span><span class="ar">مسقط</span></span><h3><span class="en">Qurum</span><span class="ar">القرم</span></h3><div class="fbtns"><a class="fb fb-wa" href="https://api.whatsapp.com/send?phone=96871557044&text=Hello%20Buckets%20%26%20Buckets%2C%20I%20would%20like%20to%20order" target="_blank" rel="noopener noreferrer"><svg class="wai" aria-hidden="true"><use href="#i-wa"/></svg><span>+968 7155 7044</span></a><a class="fb fb-ig" href="https://instagram.com/bucketsandbucketsom" target="_blank" rel="noopener noreferrer"><span>@bucketsandbucketsom</span></a><a class="fb fb-map" href="https://maps.app.goo.gl/XwJsp2YpgRn4Bw6o9?g_st=ic" target="_blank" rel="noopener noreferrer"><span><span class="en">Directions</span><span class="ar">الاتجاهات</span></span></a></div><div class="frows"><p class="fh-t"><span class="en">Opening hours</span><span class="ar">أوقات العمل</span></p><span class="fr"><b><span class="en">Sun – Sat</span><span class="ar">الأحد – السبت</span></b><i><span class="en">11:00 AM – 11:30 PM</span><span class="ar">11:00 ص – 11:30 م</span></i></span></div></div><div class="fcol fb2"><span class="ftag"><span class="en">Al Khoud</span><span class="ar">الخوض</span></span><h3><span class="en">Boulevard</span><span class="ar">البوليفارد</span></h3><div class="fbtns"><a class="fb fb-wa" href="https://api.whatsapp.com/send?phone=96899742274&text=Hello%20Buckets%20%26%20Buckets%2C%20I%20would%20like%20to%20order" target="_blank" rel="noopener noreferrer"><svg class="wai" aria-hidden="true"><use href="#i-wa"/></svg><span>+968 9974 2274</span></a><a class="fb fb-ig" href="https://instagram.com/bucketsandbucketsboulevard" target="_blank" rel="noopener noreferrer"><span>@bucketsandbucketsboulevard</span></a><a class="fb fb-map" href="https://www.google.com/maps/search/?api=1&amp;query=Buckets%20%26%20Buckets%20Al%20Araimi%20Boulevard%20Mall%20Al%20Khoud%20Muscat" target="_blank" rel="noopener noreferrer"><span><span class="en">Directions</span><span class="ar">الاتجاهات</span></span></a></div><div class="frows"><p class="fh-t"><span class="en">Opening hours</span><span class="ar">أوقات العمل</span></p><span class="fr"><b><span class="en">Sat – Wed</span><span class="ar">السبت – الأربعاء</span></b><i><span class="en">11:00 AM – 11:00 PM</span><span class="ar">11:00 ص – 11:00 م</span></i></span><span class="fr"><b><span class="en">Thu – Fri</span><span class="ar">الخميس – الجمعة</span></b><i><span class="en">11:00 AM – 12:00 AM</span><span class="ar">11:00 ص – 12:00 ص</span></i></span></div></div></div><div class="foot-note"><span class="en">Seafood buckets in Muscat, Oman</span><span class="ar">دلاء المأكولات البحرية في مسقط، عُمان</span></div>
+    <div class="foot-cols"><div class="fcol fq"><div class="fmain"><span class="ftag"><span class="en">Muscat</span><span class="ar">مسقط</span></span><h3><span class="en">Qurum</span><span class="ar">القرم</span></h3><p class="faddr"><span class="en">Qurum Garden Building (Al Argan Gardens), Shop # 02, Al Qurm St, Muscat</span><span class="ar">مبنى حدائق القرم (الأرغان)، محل رقم 02، شارع القرم، مسقط</span></p><div class="fbtns"><a class="fb fb-wa" href="https://api.whatsapp.com/send?phone=96871557044&text=Hello%20Buckets%20%26%20Buckets%2C%20I%20would%20like%20to%20order" target="_blank" rel="noopener noreferrer"><svg class="wai" aria-hidden="true"><use href="#i-wa"/></svg><span>+968 7155 7044</span></a><a class="fb fb-menu" href="#" data-footmenu><span><span class="en">View menu & order</span><span class="ar">القائمة والطلب</span></span></a><a class="fb fb-map" href="https://maps.app.goo.gl/XwJsp2YpgRn4Bw6o9?g_st=ic" target="_blank" rel="noopener noreferrer"><span><span class="en">Directions</span><span class="ar">الاتجاهات</span></span></a><a class="fb fb-ig" href="https://instagram.com/bucketsandbucketsom" target="_blank" rel="noopener noreferrer"><span>@bucketsandbucketsom</span></a></div></div><div class="fside"><div class="fphoto"><img data-img="claw" alt="Lobster tail, shrimp and corn" loading="lazy" decoding="async"></div><details class="frows"><summary class="fh-t"><span class="en">Opening hours</span><span class="ar">أوقات العمل</span></summary><span class="fr"><b><span class="en">Sun – Sat</span><span class="ar">الأحد – السبت</span></b><i><span class="en">11:00 AM – 11:30 PM</span><span class="ar">11:00 ص – 11:30 م</span></i></span></details></div></div><div class="fcol fb2"><div class="fmain"><span class="ftag"><span class="en">Al Khoud</span><span class="ar">الخوض</span></span><h3><span class="en">Boulevard</span><span class="ar">البوليفارد</span></h3><p class="faddr"><span class="en">Al Araimi Boulevard Mall, Al Khoud, Muscat</span><span class="ar">العريمي بوليفارد مول، الخوض، مسقط</span></p><div class="fbtns"><a class="fb fb-wa" href="https://api.whatsapp.com/send?phone=96899742274&text=Hello%20Buckets%20%26%20Buckets%2C%20I%20would%20like%20to%20order" target="_blank" rel="noopener noreferrer"><svg class="wai" aria-hidden="true"><use href="#i-wa"/></svg><span>+968 9974 2274</span></a><a class="fb fb-menu" href="#" data-footmenu><span><span class="en">View menu & order</span><span class="ar">القائمة والطلب</span></span></a><a class="fb fb-map" href="https://www.google.com/maps/search/?api=1&amp;query=Buckets%20%26%20Buckets%20Al%20Araimi%20Boulevard%20Mall%20Al%20Khoud%20Muscat" target="_blank" rel="noopener noreferrer"><span><span class="en">Directions</span><span class="ar">الاتجاهات</span></span></a><a class="fb fb-ig" href="https://instagram.com/bucketsandbucketsboulevard" target="_blank" rel="noopener noreferrer"><span>@bucketsandbucketsboulevard</span></a></div></div><div class="fside"><div class="fphoto"><img data-img="fry" alt="Shrimp tossed in sauce in a steel bowl" loading="lazy" decoding="async"></div><details class="frows"><summary class="fh-t"><span class="en">Opening hours</span><span class="ar">أوقات العمل</span></summary><span class="fr"><b><span class="en">Sat – Wed</span><span class="ar">السبت – الأربعاء</span></b><i><span class="en">11:00 AM – 11:00 PM</span><span class="ar">11:00 ص – 11:00 م</span></i></span><span class="fr"><b><span class="en">Thu – Fri</span><span class="ar">الخميس – الجمعة</span></b><i><span class="en">11:00 AM – 12:00 AM</span><span class="ar">11:00 ص – 12:00 ص</span></i></span></details></div></div></div><div class="foot-ig"><a class="fb fb-ig" href="https://instagram.com/bucketsandbucketsom" target="_blank" rel="noopener noreferrer"><span class="en">Instagram · Qurum</span><span class="ar">إنستغرام · القرم</span></a><a class="fb fb-ig" href="https://instagram.com/bucketsandbucketsboulevard" target="_blank" rel="noopener noreferrer"><span class="en">Instagram · Boulevard</span><span class="ar">إنستغرام · البوليفارد</span></a></div><div class="foot-note"><span class="en">Seafood buckets in Muscat, Oman</span><span class="ar">دلاء المأكولات البحرية في مسقط، عُمان</span></div>
   </div>
 </footer>
 <div class="sheet" id="wa-sheet" hidden role="dialog" aria-modal="true" aria-labelledby="wa-t">
@@ -1509,7 +1606,32 @@ footer .brand { font-size: 1.6rem; }
       sec.querySelectorAll(".mpanel").forEach(function (p) { p.classList.toggle("act", p.id === id); });
     }
     bar.addEventListener("click", function (e) { var t = e.target.closest(".mtab"); if (t) { pick(t.getAttribute("data-tab"), true); var inp = sec.querySelector(".msearch input"); if (inp && inp.value) { inp.value = ""; inp.dispatchEvent(new Event("input")); } } });
-    pick(bar.querySelector(".mtab").getAttribute("data-tab"), false);
+    var grid = document.createElement("div"); grid.className = "mexplore";
+    var gh = document.createElement("p"); gh.className = "mexp-h"; gh.innerHTML = '<span class="en">Tap a category to explore</span><span class="ar">اضغط على قسم لاستكشافه</span>'; grid.appendChild(gh);
+    bar.querySelectorAll(".mtab").forEach(function (t) {
+      var id = t.getAttribute("data-tab"), pn = document.getElementById(id), cnt = pn ? pn.querySelectorAll(".item .add, .item .pr").length : 0;
+      var g = document.createElement("button"); g.type = "button"; g.className = "mx"; g.setAttribute("data-go", id);
+      var im = t.querySelector("img"); if (im) { var i2 = document.createElement("img"); if (im.getAttribute("data-img")) i2.setAttribute("data-img", im.getAttribute("data-img")); else i2.src = im.getAttribute("src"); i2.alt = ""; i2.loading = "lazy"; g.appendChild(i2); } else { var te = t.querySelector(".te"); if (te) { var sp = document.createElement("span"); sp.className = "mxe"; sp.innerHTML = te.innerHTML; g.appendChild(sp); } }
+      var lb = document.createElement("span"); lb.className = "mxl"; lb.innerHTML = t.querySelector(".tt").innerHTML; g.appendChild(lb);
+      grid.appendChild(g);
+    });
+    var wrap0 = bar.closest(".mtabs-wrap") || bar; wrap0.parentNode.insertBefore(grid, wrap0.nextSibling);
+    var all = document.createElement("button"); all.type = "button"; all.className = "mall"; all.innerHTML = '<span class="en">⌂ All</span><span class="ar">⌂ الكل</span>'; all.setAttribute("aria-label", "All categories");
+    bar.insertBefore(all, bar.firstChild);
+    function back() { bar.querySelectorAll(".mtab").forEach(function (t) { t.classList.remove("on"); t.setAttribute("aria-selected", "false"); }); sec.querySelectorAll(".mpanel").forEach(function (p) { p.classList.remove("act"); }); sec.classList.remove("picked"); }
+    function open_(id) { pick(id, true); sec.classList.add("picked"); var pn2 = document.getElementById(id), t = (pn2 || bar).getBoundingClientRect(); window.scrollTo({ top: Math.max(0, window.scrollY + t.top - 215), behavior: "smooth" }); }
+    grid.addEventListener("click", function (e) { var g = e.target.closest(".mx"); if (g) open_(g.getAttribute("data-go")); });
+    sec.addEventListener("click", function (e) { if (e.target.closest(".mall")) { back(); var t = sec.getBoundingClientRect(); window.scrollTo({ top: Math.max(0, window.scrollY + t.top - 70), behavior: "smooth" }); } });
+    bar.addEventListener("click", function (e) { if (e.target.closest(".mtab")) sec.classList.add("picked"); });
+    back();
+    var wrap = bar.closest(".mtabs-wrap") || bar.parentNode, pv = document.createElement("button"), nx = document.createElement("button");
+    pv.type = nx.type = "button"; pv.className = "marr marr-l"; nx.className = "marr marr-r"; pv.textContent = "‹"; nx.textContent = "›";
+    pv.setAttribute("aria-label", "Scroll categories left"); nx.setAttribute("aria-label", "Scroll categories right");
+    wrap.appendChild(pv); wrap.appendChild(nx);
+    function upd() { var max = bar.scrollWidth - bar.clientWidth, x = Math.abs(bar.scrollLeft), rtl = getComputedStyle(bar).direction === "rtl", left = rtl ? (max - x) > 4 : x > 4, right = rtl ? x > 4 : (max - x) > 4; pv.hidden = !left || max < 8; nx.hidden = !right || max < 8; }
+    function go(d) { bar.scrollBy({ left: d * Math.max(180, bar.clientWidth * .7), behavior: "smooth" }); }
+    pv.addEventListener("click", function () { go(-1); }); nx.addEventListener("click", function () { go(1); });
+    bar.addEventListener("scroll", upd, { passive: true }); window.addEventListener("resize", upd); setTimeout(upd, 100); setTimeout(upd, 800);
   });
   var ms = document.querySelectorAll(".msearch input");
   function setPh() { var l = root.getAttribute("data-lang") === "ar" ? "ar" : "en"; for (var i = 0; i < ms.length; i++) ms[i].placeholder = ms[i].getAttribute("data-ph-" + l); }
@@ -1618,6 +1740,7 @@ footer .brand { font-size: 1.6rem; }
       if (a) { e.preventDefault(); var br = a.getAttribute("data-br"); change(br, a.getAttribute("data-en"), 1, a.getAttribute("data-ar"), Math.round(parseFloat(a.getAttribute("data-p")) * 1000), a.hasAttribute("data-nv")); document.body.classList.add("menu-mode"); toast((L() ? "تمت الإضافة: " : "Added: ") + (L() ? a.getAttribute("data-ar") : a.getAttribute("data-en"))); bar.classList.remove("pop"); void bar.offsetWidth; bar.classList.add("pop"); return; }
       if (t.closest && t.closest('.ptab[data-p="menu"], [data-ptab="menu"]')) { document.body.classList.add("menu-mode"); setTimeout(function () { window.scrollTo(0, 0); }, 30); }
       if (t.closest && t.closest("[data-gomenu]")) { pendingMenu = true; try { sessionStorage.setItem("bb-menu", "1"); } catch (x) {} }
+      if (t.closest && t.closest("[data-footmenu]")) { e.preventDefault(); var vv = document.querySelector(".view:not([hidden])"), mb = vv && vv.querySelector('.ptab[data-p="menu"]'); if (mb) showTab(mb); document.body.classList.add("menu-mode"); window.scrollTo(0, 0); return; }
       var m = t.closest && t.closest("[data-minus]"); if (m) { e.preventDefault(); change(m.getAttribute("data-br"), m.getAttribute("data-en"), -1); return; }
       var d = t.closest && t.closest("[data-d]"); if (d) { change(cur() || "qurum", d.getAttribute("data-k"), parseInt(d.getAttribute("data-d"), 10)); return; }
       if (t.closest && t.closest("[data-showtabs]")) { document.body.classList.remove("menu-mode"); window.scrollTo({ top: 0 }); return; }
