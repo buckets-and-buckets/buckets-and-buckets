@@ -258,13 +258,37 @@ header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; back
 .of-card h3 { margin: 4px 0 0; font-size: clamp(1.35rem, 3.4vw, 1.9rem); line-height: 1.1; color: #111; }
 .of-card p { margin: 0; color: #1d1d1d; line-height: 1.5; font-size: 1.02rem; }
 .of-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
-.of-meta span { background: #fff; border: 2px solid #111; border-radius: 999px; padding: 4px 12px; font-weight: 700; font-size: .84rem; }
+
+.of-meta > span { background: #fff; border: 2px solid #111; border-radius: 999px; padding: 4px 12px; font-weight: 700; font-size: .84rem; }
 .of-code { font-size: .95rem; } .of-code b { border: 2px dashed #111; border-radius: 10px; padding: 2px 10px; background: #fff; letter-spacing: .08em; margin-inline-start: 4px; }
 .of-use { margin-top: 8px; align-self: flex-start; min-height: 46px; padding: 10px 22px; border-radius: 999px; border: 2px solid #111; background: #111; color: #ffe45c; font: inherit; font-weight: 800; cursor: pointer; box-shadow: 3px 3px 0 #fff; }
 .of-use.on { background: #fff; color: #111; }
 body.menu-mode .offers, body.menu-mode .offerbar { display: none !important; }
 @media (max-width: 760px) { .offerbar .ob { font-size: .85rem; text-align: start; } .offers { padding-block: 18px 4px !important; } }
 .branch-hero { padding-top: clamp(22px, 3vw, 36px) !important; }
+
+.offers { scroll-margin-top: 84px; }
+html body header .bar-actions a.btn.btn-offers { background: #d92b1c !important; color: #fff !important; border-color: #ffe45c !important; }
+html header .bar-actions .btn.btn-offers::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #ffe45c; margin-inline-end: 7px; animation: ofp 1.6s infinite; }
+.of-empty { background: #fff; border: 3px dashed #111; border-radius: 22px; padding: 22px; text-align: center; }
+.of-empty h3 { margin: 0 0 6px; font-size: 1.5rem; color: #111; }
+.of-empty p { margin: 0 auto 14px; max-width: 520px; color: #333; }
+.of-igs { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.of-ig { display: inline-flex; align-items: center; min-height: 46px; padding: 10px 20px; border: 2px solid #111; border-radius: 999px; background: #dccfff; color: #111; font-weight: 800; text-decoration: none; box-shadow: 3px 3px 0 #111; }
+@media (max-width: 520px) { html body header .bar-actions { gap: 4px !important; } html body header .bar-actions .btn { padding: 7px 8px !important; font-size: .76rem !important; min-height: 40px !important; } html body header .bar-actions a.btn.btn-offers::before { display: none; } html body header .logo-sm { width: 42px !important; } html body header .wrap.bar { padding-inline: 10px !important; gap: 6px; } }
+@media (max-width: 345px) { html body header .bar-actions a.btn:not(.btn-offers) { display: none; } html body header .bar-actions .btn.lang { display: inline-flex !important; } }
+
+.of-steps { margin-top: 6px; background: #fff; border: 2px solid #111; border-radius: 16px; overflow: hidden; }
+.of-steps > summary { cursor: pointer; list-style: none; padding: 12px 16px; font-weight: 800; min-height: 46px; display: flex; align-items: center; justify-content: space-between; }
+.of-steps > summary::-webkit-details-marker { display: none; }
+.of-steps > summary::after { content: "+"; width: 28px; height: 28px; border-radius: 50%; background: #111; color: #ffe45c; display: grid; place-items: center; font-size: 1.3rem; }
+.of-steps[open] > summary::after { content: "−"; }
+.of-steps ol { margin: 0; padding: 4px 18px 16px 40px; display: grid; gap: 8px; line-height: 1.45; }
+html[data-lang="ar"] .of-steps ol { padding: 4px 40px 16px 18px; }
+.of-steps li { font-size: .98rem; }
+
+.of-meta > a.of-br { background: #111; color: #ffe45c; border: 2px solid #111; border-radius: 999px; padding: 6px 14px; font-weight: 800; font-size: .88rem; text-decoration: none; min-height: 40px; display: inline-flex; align-items: center; }
+.of-meta > a.of-br:hover { background: #fff; color: #111; }
 
 /* ===== Professional typography ===== */
 :root { --font-display: "Barlow Condensed", "Arial Narrow", "Segoe UI", sans-serif; --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; --font-ar-display: "Cairo", "Segoe UI", Tahoma, sans-serif; --font-ar: "Cairo", "Segoe UI", Tahoma, sans-serif; }
@@ -1377,6 +1401,7 @@ body:not(.menu-mode) .menu-head .showtabs { display: none !important; }
   <div class="wrap bar">
     <a class="brand" href="#home" aria-label="Buckets &amp; Buckets home" style="display:flex;align-items:center;gap:10px"><span class="logo logo-sm" role="img" aria-label="Buckets &amp; Buckets logo"></span><span class="sr"><span class="en">Buckets &amp; Buckets</span><span class="ar">باكتس آند باكتس</span></span></a>
     <div class="bar-actions">
+      <a class="btn btn-offers" href="#home" data-offers style="background:#d92b1c !important;color:#fff !important;border-color:#ffe45c !important"><span class="en">Offers</span><span class="ar">العروض</span></a>
       <a class="btn" href="#qurum"><span class="en">Qurum</span><span class="ar">القرم</span></a>
       <a class="btn" href="#boulevard"><span class="en">Boulevard</span><span class="ar">البوليفارد</span></a>
       <button class="btn lang" id="lang" type="button" aria-label="Switch language"><span class="en">العربية</span><span class="ar">English</span></button>
@@ -1655,31 +1680,30 @@ body:not(.menu-mode) .menu-head .showtabs { display: none !important; }
      title   : headline         text : one or two lines of detail
      code    : optional word customers mention when ordering ("" for none)
      bar     : true shows the offer in the slim banner at the very top as well
+     cta     : false hides the "Use this offer" button (for offers redeemed at the branch)
+     steps   : optional "How to redeem" list, each step { en, ar }
    Times use Oman time. English and Arabic are both supported. */
 window.BB_OFFERS = [
   {
-    id: "sample-national-day",
-    active: false,
+    id: "thawani-dine-in-15",
+    active: true,
     branch: "all",
-    start: "2026-11-18",
-    end: "2026-11-19 23:59",
     color: "tomato",
-    bar: true,
-    badge: { en: "National Day", ar: "العيد الوطني" },
-    title: { en: "National Day special", ar: "عرض العيد الوطني" },
-    text: { en: "Replace this line with your offer details.", ar: "استبدل هذا السطر بتفاصيل العرض." },
-    code: ""
-  },
-  {
-    id: "sample-weekend",
-    active: false,
-    branch: "qurum",
-    color: "lilac",
     bar: false,
-    badge: { en: "This weekend", ar: "نهاية الأسبوع" },
-    title: { en: "Weekend offer", ar: "عرض نهاية الأسبوع" },
-    text: { en: "Replace this line with your offer details.", ar: "استبدل هذا السطر بتفاصيل العرض." },
-    code: "WEEKEND"
+    cta: false,
+    badge: { en: "Dine-in · Sun – Wed", ar: "داخل المطعم · الأحد – الأربعاء" },
+    title: { en: "15% off with the Thawani app", ar: "خصم 15% عبر تطبيق ثواني" },
+    text: { en: "Dine-in customers get 15% off every Sunday to Wednesday. Redeem the offer through the Thawani app at the branch.", ar: "خصم 15% لعملاء تناول الطعام داخل المطعم كل يوم من الأحد إلى الأربعاء. استرد العرض عبر تطبيق ثواني في الفرع." },
+    code: "",
+    steps: [
+      { en: "Show the offer: tell our staff you have the offer from the Thawani app and show the offer page for Buckets & Buckets in the app.", ar: "أظهر العرض: أخبر الموظف أن لديك عرضاً من تطبيق ثواني، وأظهر صفحة عرض باكتس آند باكتس في التطبيق." },
+      { en: "Original price: our staff gives you the original bill amount.", ar: "السعر الأصلي: يزوّدك الموظف بمبلغ الفاتورة الأصلي." },
+      { en: "Discounted price: the final price after the discount appears in the app.", ar: "السعر بعد الخصم: يظهر السعر النهائي بعد الخصم في التطبيق." },
+      { en: "Redemption code or QR: our staff gives you the redemption code, or a QR code to scan in the Thawani app.", ar: "رمز الاسترداد أو QR: يعطيك الموظف رمز الاسترداد أو رمز QR لمسحه عبر تطبيق ثواني." },
+      { en: "Redeem: tap “Redeem Offer”.", ar: "الاسترداد: اضغط على «استرداد العرض»." },
+      { en: "Confirmation: a “Verified” message confirms the offer was redeemed.", ar: "التأكيد: تظهر رسالة «تم التحقق» لتأكيد نجاح الاسترداد." },
+      { en: "Payment: pay the final discounted amount at the branch, in cash or by card.", ar: "الدفع: ادفع المبلغ النهائي بعد الخصم في الفرع، نقداً أو بالبطاقة." }
+    ]
   }
 ];
 </script>
@@ -1961,7 +1985,6 @@ window.BB_OFFERS = [
     /* ---------- limited-time offers ---------- */
     (function () {
       var raw = window.BB_OFFERS || [];
-      if (!raw.length) return;
       var NM = { qurum: ["Qurum", "قرم"], boulevard: ["Boulevard", "البوليفارد"], all: ["Both branches", "كلا الفرعين"] };
       var SEL = "bb-offer";
       function esc(x) { return String(x == null ? "" : x).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
@@ -1985,6 +2008,21 @@ window.BB_OFFERS = [
       function keep(v) { try { localStorage.setItem(SEL, JSON.stringify(v)); } catch (x) {} }
       function byId(id) { for (var i = 0; i < raw.length; i++) if (raw[i].id === id) return raw[i]; return null; }
       function toastMsg(t) { var el = document.getElementById("toast"); if (!el) return; el.textContent = t; el.classList.add("show"); setTimeout(function () { el.classList.remove("show"); }, 2200); }
+      function brLink(k) {
+        var as = document.querySelectorAll("header .bar-actions a:not([data-offers])");
+        return as[k === "qurum" ? 0 : 1] ? as[k === "qurum" ? 0 : 1].getAttribute("href") : "#";
+      }
+      function metaChips(o, br, bn) {
+        var h = "", e = ts(o.end, true);
+        if (e) h += '<span class="of-left" data-end="' + e + '">' + bi(left(o)) + "</span>";
+        var names = { qurum: { en: "Qurum", ar: "القرم" }, boulevard: { en: "Boulevard", ar: "البوليفارد" } };
+        var targets = bn === "all" ? ["qurum", "boulevard"] : [bn];
+        targets.forEach(function (k) {
+          if (br === "all") h += '<a class="of-br of-go" href="' + brLink(k) + '">' + bi(names[k]) + " &nbsp;→</a>";
+          else if (k === br) h += '<span class="of-br">' + bi(names[k]) + "</span>";
+        });
+        return h;
+      }
       function card(o, br, i) {
         var col = { yellow: 1, lilac: 1, peach: 1, tomato: 1 }[o.color] ? o.color : ["tomato", "lilac", "yellow", "peach"][i % 4];
         var bn = o.branch || "all", on = (chosen()[br === "all" ? bn : br] || {}).id === o.id || (br === "all" && bn === "all" && (chosen().qurum || {}).id === o.id);
@@ -1992,9 +2030,10 @@ window.BB_OFFERS = [
         return '<article class="of-card of-' + col + '" data-of="' + esc(o.id) + '">' +
           (o.badge ? '<span class="of-badge">' + bi(o.badge) + "</span>" : "") +
           "<h3>" + bi(o.title) + "</h3>" + (o.text ? "<p>" + bi(o.text) + "</p>" : "") +
-          '<div class="of-meta"><span class="of-left" data-end="' + (ts(o.end, true) || "") + '">' + bi(l) + '</span><span class="of-br">' + bi({ en: NM[bn][0], ar: NM[bn][1] }) + "</span></div>" +
+          '<div class="of-meta">' + metaChips(o, br, bn) + "</div>" +
           (o.code ? '<div class="of-code"><span class="en">Mention code</span><span class="ar">اذكر الرمز</span> <b>' + esc(o.code) + "</b></div>" : "") +
-          '<button type="button" class="of-use' + (on ? " on" : "") + '" data-offer="' + esc(o.id) + '" data-obr="' + esc(br) + '"><span class="en">' + (on ? "✓ Added to your order" : "Use this offer") + '</span><span class="ar">' + (on ? "✓ أضيف إلى طلبك" : "استخدم العرض") + "</span></button></article>";
+          (o.steps && o.steps.length ? '<details class="of-steps"><summary><span class="en">How to redeem</span><span class="ar">طريقة الاسترداد</span></summary><ol>' + o.steps.map(function (x) { return "<li>" + bi(x) + "</li>"; }).join("") + "</ol></details>" : "") +
+          (o.cta === false ? "" : '<button type="button" class="of-use' + (on ? " on" : "") + '" data-offer="' + esc(o.id) + '" data-obr="' + esc(br) + '"><span class="en">' + (on ? "✓ Added to your order" : "Use this offer") + '</span><span class="ar">' + (on ? "✓ أضيف إلى طلبك" : "استخدم العرض") + "</span></button>") + "</article>";
       }
       function build() {
         var old = document.querySelectorAll(".offers, .offerbar"); for (var k = 0; k < old.length; k++) old[k].remove();
@@ -2002,9 +2041,15 @@ window.BB_OFFERS = [
         for (var v = 0; v < views.length; v++) {
           var id = (views[v].id || "").replace("v-", ""), br = id === "qurum" || id === "boulevard" ? id : "all";
           var list = raw.filter(function (o) { return live(o, br); });
-          if (!list.length) continue;
+          if (!list.length && br !== "all") continue;
           var sec = document.createElement("section"); sec.className = "offers wrap"; sec.setAttribute("aria-label", "Offers");
-          sec.innerHTML = '<div class="of-h"><span class="of-dot"></span><b><span class="en">Limited-time offers</span><span class="ar">عروض لفترة محدودة</span></b></div><div class="of-row n' + Math.min(list.length, 3) + '">' + list.map(function (o, i) { return card(o, br, i); }).join("") + "</div>";
+          sec.id = br === "all" ? "offers" : "";
+          if (!list.length) {
+            var ig = document.querySelectorAll("footer a[href*='instagram.com']"), igh = "";
+            for (var q = 0; q < ig.length && q < 2; q++) igh += '<a class="of-ig" href="' + ig[q].getAttribute("href") + '" target="_blank" rel="noopener">' + (q === 0 ? bi({ en: "Instagram · Qurum", ar: "إنستغرام · القرم" }) : bi({ en: "Instagram · Boulevard", ar: "إنستغرام · البوليفارد" })) + "</a>";
+            sec.innerHTML = '<div class="of-h"><span class="of-dot"></span><b><span class="en">Offers</span><span class="ar">العروض</span></b></div><div class="of-empty"><h3><span class="en">No offers right now</span><span class="ar">لا توجد عروض حالياً</span></h3><p><span class="en">Our next promotion will appear here. Follow us on Instagram so you never miss one.</span><span class="ar">سيظهر عرضنا القادم هنا. تابعونا على إنستغرام حتى لا يفوتكم أي عرض.</span></p><div class="of-igs">' + igh + "</div></div>";
+          } else
+          sec.innerHTML = '<div class="of-h"><span class="of-dot"></span><b><span class="en">Offers</span><span class="ar">العروض</span></b></div><div class="of-row n' + Math.min(list.length, 3) + '">' + list.map(function (o, i) { return card(o, br, i); }).join("") + "</div>";
           var anchor = br === "all" ? views[v].querySelector(".marquee") : views[v].querySelector(".ptabs-wrap");
           if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(sec, br === "all" ? anchor.nextSibling : anchor); else views[v].insertBefore(sec, views[v].firstChild);
           if (!first) first = list;
@@ -2035,7 +2080,16 @@ window.BB_OFFERS = [
         var c = chosen()[br]; if (!c) return ""; var o = byId(c.id); if (!o || !live(o, br)) return "";
         return (ar ? "العرض: " : "Offer: ") + plain(o.title, ar) + (o.code ? " (" + o.code + ")" : "");
       } };
+      function goOffers() { var v = document.querySelector(".view:not([hidden])"), s = v && v.querySelector(".offers"); if (s) { s.scrollIntoView({ behavior: "smooth", block: "start" }); return true; } return false; }
+      document.addEventListener("click", function (e) {
+        var a = e.target.closest && e.target.closest("[data-offers]"); if (!a) return;
+        e.preventDefault(); document.body.classList.remove("menu-mode");
+        if (goOffers()) return;
+        try { sessionStorage.setItem("bb-go-offers", "1"); } catch (x) {}
+        var home = document.querySelector("header .brand"); if (home) { home.click(); setTimeout(function () { if (goOffers()) { try { sessionStorage.removeItem("bb-go-offers"); } catch (x) {} } }, 350); }
+      });
       build(); setInterval(tick, 60000);
+      try { if (sessionStorage.getItem("bb-go-offers")) { sessionStorage.removeItem("bb-go-offers"); setTimeout(goOffers, 400); } } catch (x) {}
     })();})();
 </script>
 
