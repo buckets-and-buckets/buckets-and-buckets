@@ -1345,7 +1345,7 @@ html[data-lang="ar"] details.hrs-d .hrs .hr b { letter-spacing: 0; text-transfor
 .wrap { width: 100%; max-width: 1400px !important; margin-inline: auto !important; padding-inline: clamp(16px, 3.2vw, 48px) !important; box-sizing: border-box; }
 .wrap .wrap { padding-inline: 0 !important; }
 /* branch hero: identical for Qurum and Boulevard, image can never resize its column */
-.branch-hero { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: 20px !important; align-items: center !important; justify-items: stretch !important; padding-block: 10px 18px !important; }
+.branch-hero { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: 20px !important; align-items: center !important; justify-items: stretch !important; padding-block: clamp(22px, 3vw, 36px) 18px !important; }
 .branch-hero > div:first-child { justify-self: stretch !important; min-width: 0; }
 .branch-hero h1 { overflow-wrap: normal; word-break: normal; font-size: clamp(2.3rem, 9.5vw, 4.4rem); }
 .bphoto { position: relative !important; width: 100% !important; max-width: none !important; margin: 0 !important; aspect-ratio: 16 / 10 !important; order: -1; overflow: hidden; }
@@ -1493,7 +1493,6 @@ body:not(.menu-mode) .menu-head .showtabs { display: none !important; }
       <div>
         <p class="eyebrow"><span class="en">Muscat · Qurum</span><span class="ar">مسقط · القرم</span></p>
         <h1><span class="en">Qurum <em>branch.</em></span><span class="ar">فرع <em>القرم.</em></span></h1>
-        <p class="lede"><span class="en">Seafood buckets at Shop # 02, Qurum Garden Building, Al Qurm Street.</span><span class="ar">دلاء مأكولات بحرية في محل رقم 02 بمبنى حدائق القرم، شارع القرم.</span></p>
         <div class="actions">
           <a class="btn btn-wa" href="https://api.whatsapp.com/send?phone=96871557044&text=Hello%20Buckets%20%26%20Buckets%2C%20I%20would%20like%20to%20order" target="_blank" rel="noopener noreferrer"><svg class="wai" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
           <a class="btn" href="https://maps.app.goo.gl/XwJsp2YpgRn4Bw6o9?g_st=ic" target="_blank" rel="noopener noreferrer"><span class="en">Directions</span><span class="ar">الاتجاهات</span></a>
@@ -1543,7 +1542,6 @@ body:not(.menu-mode) .menu-head .showtabs { display: none !important; }
       <div>
         <p class="eyebrow"><span class="en">Muscat · Al Khoud</span><span class="ar">مسقط · الخوض</span></p>
         <h1><span class="en">Boulevard <em>branch.</em></span><span class="ar">فرع <em>البوليفارد.</em></span></h1>
-        <p class="lede"><span class="en">Seafood buckets inside Al Araimi Boulevard Mall, Al Khoud.</span><span class="ar">دلاء مأكولات بحرية داخل العريمي بوليفارد مول في الخوض.</span></p>
         <div class="actions">
           <a class="btn btn-wa" href="https://api.whatsapp.com/send?phone=96899742274&text=Hello%20Buckets%20%26%20Buckets%2C%20I%20would%20like%20to%20order" target="_blank" rel="noopener noreferrer"><svg class="wai" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
           <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Buckets%20%26%20Buckets%20Al%20Araimi%20Boulevard%20Mall%20Al%20Khoud%20Muscat" target="_blank" rel="noopener noreferrer"><span class="en">Directions</span><span class="ar">الاتجاهات</span></a>
