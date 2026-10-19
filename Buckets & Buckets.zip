@@ -1788,7 +1788,7 @@ window.BB_OFFERS = [
     bar: false,
     cta: false,
     badge: { en: "18–21 Oct · Ladies", ar: "18–21 أكتوبر · للسيدات" },
-    title: { en: "Ladies’ group offer", ar: "عرض مجموعات السيدات" },
+    title: { en: "Omani’ Women's Day Offer", ar: "عرض يوم المرأة العُمانية" },
     value: { en: "20%", ar: "20%" },
     unit: { en: "OFF", ar: "خصم" },
     teaser: { en: "Calling all ladies! Gather your group, because a special treat is waiting for you.", ar: "إلى كل السيدات! اجمعن مجموعتكن، ففي انتظاركن مفاجأة مميزة." },
