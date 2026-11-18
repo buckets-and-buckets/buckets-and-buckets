@@ -253,7 +253,15 @@ header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; back
 .of-row { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
 .of-row.n1 { grid-template-columns: minmax(0, 720px); justify-content: center; }
 .of-card { position: relative; border: 3px solid #111; border-radius: 24px; padding: 26px 22px 20px; box-shadow: 7px 7px 0 #111; color: #111; display: flex; flex-direction: column; gap: 8px; }
-.of-yellow { background: #ffe45c; } .of-lilac { background: #dccfff; } .of-peach { background: #ffc9a8; } .of-tomato { background: #ff8a6b; }
+.of-yellow { background: #ffe45c; }
+/* Oman National Day offer: flag colours (white / red / green) */
+.of-card[data-of="national-day-dine-in-20"] { background: linear-gradient(180deg, #fff 0, #fff 33%, #db161b 33%, #db161b 67%, #008000 67%, #008000 100%); }
+.of-card[data-of="national-day-dine-in-20"] .of-pts li, .of-card[data-of="national-day-dine-in-20"] .of-pts li > span { color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.35); }
+.of-card[data-of="national-day-dine-in-20"] .of-pts li strong { background: rgba(0,0,0,.28); color: #fff; }
+.of-card[data-of="national-day-dine-in-20"] .of-teaser { color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.35); }
+.of-card[data-of="national-day-dine-in-20"] .of-meta .of-br, .of-card[data-of="national-day-dine-in-20"] .of-left { box-shadow: 0 0 0 2px #fff; }
+.of-card[data-of="national-day-dine-in-20"] .of-big { color: #fff; }
+.of-card[data-of="national-day-dine-in-20"] .of-top h3 { background: #fff; border-radius: 12px; padding: 4px 10px; align-self: center; } .of-lilac { background: #dccfff; } .of-peach { background: #ffc9a8; } .of-tomato { background: #ff8a6b; }
 .of-badge { position: absolute; top: -14px; inset-inline-start: 18px; background: #111; color: #ffe45c; border-radius: 999px; padding: 5px 14px; font-weight: 800; font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; transform: rotate(-2deg); }
 .of-card h3 { margin: 4px 0 0; font-size: clamp(1.35rem, 3.4vw, 1.9rem); line-height: 1.1; color: #111; }
 .of-card p { margin: 0; color: #1d1d1d; line-height: 1.5; font-size: 1.02rem; }
@@ -1797,6 +1805,29 @@ window.BB_OFFERS = [
       { icon: "🏷️", en: "**20% off** your total bill", ar: "**خصم 20%** على إجمالي الفاتورة" },
       { icon: "📅", en: "**18th to 21st October**", ar: "من **18 إلى 21 أكتوبر**" },
       { icon: "📍", en: "Al Araimi Boulevard Mall branch **only**", ar: "في فرع العريمي بوليفارد مول **فقط**" }
+    ],
+    code: ""
+  },
+  {
+    id: "national-day-dine-in-20",
+    active: true,
+    branch: "all",
+    start: "2026-11-18",
+    end: "2026-11-22 23:59",
+    color: "yellow",
+    bar: false,
+    cta: false,
+    badge: { en: "18–22 Nov · Limited time", ar: "18–22 نوفمبر · لفترة محدودة" },
+    title: { en: "National Day celebration offer", ar: "عرض احتفالات العيد الوطني" },
+    value: { en: "20%", ar: "20%" },
+    unit: { en: "OFF", ar: "خصم" },
+    teaser: { en: "Celebrate Oman National Day with us. A special treat is waiting for you.", ar: "احتفل معنا بالعيد الوطني العُماني، ففي انتظارك عرض مميز." },
+    points: [
+      { icon: "🇴🇲", en: "On the occasion of **Oman National Day** celebrations", ar: "بمناسبة احتفالات **العيد الوطني العُماني**" },
+      { icon: "📅", en: "**Limited time:** 18th to 22nd November", ar: "**لفترة محدودة:** من 18 إلى 22 نوفمبر" },
+      { icon: "🍽️", en: "**Dine-in** customers only", ar: "لتناول الطعام **داخل المطعم** فقط" },
+      { icon: "🏷️", en: "**20% off** your bill", ar: "**خصم 20%** على فاتورتك" },
+      { icon: "📍", en: "Valid at **Qurum** and **Al Araimi Boulevard**", ar: "ساري في **القرم** و**العريمي بوليفارد**" }
     ],
     code: ""
   }
